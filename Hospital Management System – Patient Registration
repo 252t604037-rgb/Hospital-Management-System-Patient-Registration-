@@ -1,0 +1,59 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+class Patient {
+private:
+    int patientID;
+    string name;
+    int age;
+    string gender;
+    string phone;
+    string disease;
+
+public:
+    void registerPatient() {
+        cout << "\n===== Patient Registration =====\n";
+
+        cout << "Enter Patient ID: ";
+        cin >> patientID;
+        cin.ignore();
+
+        cout << "Enter Patient Name: ";
+        getline(cin, name);
+
+        cout << "Enter Age: ";
+        cin >> age;
+        cin.ignore();
+
+        cout << "Enter Gender: ";
+        getline(cin, gender);
+
+        cout << "Enter Phone Number: ";
+        getline(cin, phone);
+
+        cout << "Enter Disease/Problem: ";
+        getline(cin, disease);
+
+        cout << "\nPatient registered successfully!\n";
+    }
+
+    void displayPatient() {
+        cout << "\n===== Patient Details =====\n";
+        cout << "Patient ID     : " << patientID << endl;
+        cout << "Name           : " << name << endl;
+        cout << "Age            : " << age << endl;
+        cout << "Gender         : " << gender << endl;
+        cout << "Phone Number   : " << phone << endl;
+        cout << "Disease/Problem: " << disease << endl;
+    }
+};
+
+int main() {
+    Patient p;
+
+    p.registerPatient();
+    p.displayPatient();
+
+    return 0;
+}
